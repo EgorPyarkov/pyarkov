@@ -1,0 +1,94 @@
+// Файл обнуляющих стилей
+@import "nullstyle";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap");
+:root {
+  --bg-color: #1f1f1f;
+  --text-color: #fff;
+  --red-color: #e65f78;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.header {
+  height: 100vh;
+}
+
+.navbar {
+  // position: fixed;
+  height: 100px;
+  padding: 25px 160px;
+  background-color: var(--bg-color);
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item {
+    padding: 10px 0px 0px 0px;
+  }
+  &__item a {
+    color: var(--text-color);
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: center;
+    padding: 10px;
+  }
+}
+.resume {
+  background-color: var(--red-color);
+  border-radius: 3px;
+  padding: 8px 14px;
+  line-height: 27.2px;
+}
+
+.block {
+  max-width: 50%;
+  margin: 200px auto;
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__image img {
+    border-radius: 50%;
+    max-width: 150px;
+    max-height: 150px;
+  }
+  &__text {
+  }
+  &__title {
+    font-family: "Open Sans";
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 79.2px;
+    margin: 0 0 10px 0;
+  }
+  &__description {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32.68px;
+  }
+
+  &__container {
+    width: 636px;
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+span {
+  color: var(--red-color);
+}
