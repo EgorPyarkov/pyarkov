@@ -11,14 +11,17 @@ body {
   color: var(--text-color);
 }
 .header {
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
 }
 
 .navbar {
-  // position: fixed;
   height: 100px;
-  padding: 25px 160px;
+  max-width: 100%;
+  margin: 0 auto;
   background-color: var(--bg-color);
+  padding: 25px 35px;
+
   &__row {
     display: flex;
     justify-content: space-between;
@@ -26,23 +29,24 @@ body {
   }
 
   &__logo {
-    width: 50px;
-    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
   }
   &__menu {
+    min-width: 600px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      min-width: 400px;
+    }
   }
   &__item {
-    padding: 10px 0px 0px 0px;
-  }
-  &__item a {
     color: var(--text-color);
     font-family: "Open Sans";
     font-size: 16px;
     font-weight: 400;
-    line-height: 21.79px;
-    text-align: center;
     padding: 10px;
   }
 }
@@ -53,21 +57,46 @@ body {
   line-height: 27.2px;
 }
 
-.block {
-  max-width: 50%;
-  margin: 200px auto;
+.content {
+  padding: 15%;
+  min-height: 70vh;
+  max-width: 100%;
+  min-width: 100%;
+  // margin: 0 auto;
+
   &__row {
+    max-width: 100%;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    width: 636px;
+    height: 150px;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+      display: block;
+    }
   }
-  &__image img {
-    border-radius: 50%;
-    max-width: 150px;
-    max-height: 150px;
+
+  &__image {
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+    img {
+      border-radius: 50%;
+      margin: 0 25px 0 0;
+      max-width: 150px;
+      max-height: 150px;
+      @media (max-width: 767px) {
+        margin: 0 auto;
+      }
+    }
   }
   &__text {
+    min-width: 90%;
+    @media (max-width: 767px) {
+      margin: 0;
+      text-align: center;
+    }
   }
   &__title {
     font-family: "Open Sans";
@@ -76,19 +105,43 @@ body {
     line-height: 79.2px;
     margin: 0 0 10px 0;
   }
+
   &__description {
     font-family: "Open Sans";
     font-weight: 300;
     font-size: 24px;
     line-height: 32.68px;
   }
-
-  &__container {
-    width: 636px;
-    height: 150px;
+  &__next-page {
     margin: 0 auto;
+    max-width: 20px;
+    max-height: 20px;
+    position: relative;
+    bottom: 0;
+  }
+  &__next-page img {
+    margin: 0 auto;
+    max-width: 20px;
+    max-height: 20px;
   }
 }
-span {
+.red_text {
   color: var(--red-color);
 }
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  @media (max-width: 767px) {
+    max-width: none;
+  }
+}
+// @media (max-width: 1200px) {
+//   .container {
+//     max-width: 970px;
+//   }
+// }
+// @media (max-width: 992px) {
+//   .container {
+//     max-width: 750px;
+//   }
+// }
