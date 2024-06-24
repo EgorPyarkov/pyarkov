@@ -6,21 +6,26 @@
   --text-color: #fff;
   --red-color: #e65f78;
 }
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+html {
+  scroll-behavior: smooth;
 }
-.header {
-  max-height: 100vh;
-  min-height: 100vh;
+body {
+  color: var(--text-color);
+  background-color: #333333;
+}
+.home {
+  height: 100vh;
+  background-color: var(--bg-color);
 }
 
 .navbar {
-  height: 100px;
-  max-width: 100%;
+  height: 80px;
+  min-width: 100%;
   margin: 0 auto;
   background-color: var(--bg-color);
-  padding: 25px 35px;
+  padding: 15px 35px;
+  position: fixed;
+  z-index: 1;
 
   &__row {
     display: flex;
@@ -48,6 +53,9 @@ body {
     font-size: 16px;
     font-weight: 400;
     padding: 10px;
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
   }
 }
 .resume {
@@ -56,22 +64,18 @@ body {
   padding: 8px 14px;
   line-height: 27.2px;
 }
-
 .content {
-  padding: 15%;
-  min-height: 70vh;
-  max-width: 100%;
-  min-width: 100%;
-  // margin: 0 auto;
-
+  padding: 20vh 0 0 0;
+  min-height: 100%;
   &__row {
+    padding: 10% 0 15% 0;
     max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 636px;
     height: 150px;
     margin: 0 auto;
+    display: flex;
+    // align-items: start;
+
     @media (max-width: 767px) {
       display: block;
     }
@@ -92,9 +96,8 @@ body {
     }
   }
   &__text {
-    min-width: 90%;
+    min-width: 100%;
     @media (max-width: 767px) {
-      margin: 0;
       text-align: center;
     }
   }
@@ -106,42 +109,215 @@ body {
     margin: 0 0 10px 0;
   }
 
-  &__description {
+  &__subtitle {
     font-family: "Open Sans";
     font-weight: 300;
     font-size: 24px;
-    line-height: 32.68px;
+    // line-height: 32.68px;
   }
   &__next-page {
-    margin: 0 auto;
-    max-width: 20px;
-    max-height: 20px;
-    position: relative;
-    bottom: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    animation-name: updown;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
   }
   &__next-page img {
-    margin: 0 auto;
-    max-width: 20px;
-    max-height: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+@keyframes updown {
+  0% {
+    bottom: 25px;
+  }
+  100% {
+    bottom: 50px;
   }
 }
 .red_text {
   color: var(--red-color);
 }
 .container {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
+  @media (max-width: 1400px) {
+    max-width: 1100px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 900px;
+  }
+  @media (max-width: 1000px) {
+    max-width: 800px;
+  }
   @media (max-width: 767px) {
     max-width: none;
   }
 }
-// @media (max-width: 1200px) {
-//   .container {
-//     max-width: 970px;
-//   }
-// }
-// @media (max-width: 992px) {
-//   .container {
-//     max-width: 750px;
-//   }
-// }
+
+.about {
+  // min-height: 100vh;
+  height: 100vh;
+  // width: 100%;
+  margin: 0 auto;
+  padding: 80px 0 0 0;
+
+  &__title {
+    margin: 0 0 55px 0;
+    @media (max-width: 1000px) {
+      margin: 0 0 5px 0;
+    }
+  }
+  &__main-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    // width: 100%;
+    // margin: 0 auto;
+    padding: 20px;
+    @media (max-width: 867px) {
+      // flex-direction: column;
+      // align-items: center;
+    }
+  }
+  &__image {
+    width: 250px;
+    height: 250px;
+    box-shadow: 10px 10px 1px var(--red-color);
+    margin: 0 30px 0 0;
+    @media (max-width: 867px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &__image img {
+    width: 250px;
+    height: 250px;
+    @media (max-width: 867px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &__content {
+    font-family: "open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27.2px;
+    @media (max-width: 867px) {
+      font-size: 14px;
+    }
+  }
+  &__text {
+    margin: 0 0 30px 0;
+  }
+  &__information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+    // @media (max-width: 876px) {
+    //   display: none;
+    // }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    padding: 0 10px;
+  }
+  &__name {
+    font-weight: 600;
+  }
+  &__value {
+    font-weight: 300;
+  }
+
+  &__row {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    padding: 15px;
+    margin: 0 15px;
+    align-items: start;
+  }
+  // @media (max-width: 876px) {
+  // width: 700px;
+  // }
+  // @media (max-width: 767px) {
+  // }
+  &__column {
+    flex: 0 0 33.333%;
+  }
+}
+.about-item {
+  text-align: center;
+  &__title {
+    font-family: "Open Sans";
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 87px;
+    @media (max-width: 1400px) {
+      line-height: 80px;
+      font-size: 60px;
+    }
+    @media (max-width: 1200px) {
+      line-height: 73px;
+      font-size: 55px;
+    }
+    @media (max-width: 1000px) {
+      line-height: 65px;
+      font-size: 50px;
+    }
+    @media (max-width: 767px) {
+      line-height: 50px;
+      font-size: 40px;
+    }
+  }
+  &__description {
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    @media (max-width: 1400px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 18px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+}
+.title {
+  font-family: "Open Sans";
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 65.37px;
+  text-transform: capitalize;
+  text-align: center;
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--red-color);
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  @media (max-width: 867px) {
+    font-size: 24px;
+  }
+}
