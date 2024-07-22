@@ -123,6 +123,7 @@ body {
     height: 20px;
     position: absolute;
     bottom: 25px;
+    margin: 0 0 0 -10px;
     left: 50%;
     animation-name: updown;
     animation-duration: 2s;
@@ -708,7 +709,7 @@ body {
   }
   &__button {
     max-width: 160px;
-    // margin: 55px auto;
+    margin: 20px auto 0 auto;
     text-align: center;
     background-color: var(--red-color);
     border-radius: 5px;
