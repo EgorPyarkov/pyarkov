@@ -62,7 +62,10 @@ body {
   background-color: var(--red-color);
   border-radius: 3px;
   padding: 8px 14px;
-  line-height: 27.2px;
+  line-height: 27px;
+  @media (max-width: 767px) {
+    line-height: 20px;
+  }
 }
 .content {
   padding: 20vh 0 0 0;
@@ -198,6 +201,9 @@ body {
       width: 100px;
       height: 100px;
     }
+    @media (max-width: 670px) {
+      display: none;
+    }
   }
   &__image img {
     // max-width: 100%;
@@ -226,15 +232,15 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 -10px;
-    // @media (max-width: 876px) {
-    //   display: none;
-    // }
+    @media (max-width: 867px) {
+      line-height: 20px;
+    }
   }
   &__info {
     display: flex;
     justify-content: space-between;
-    width: 250px;
     padding: 0 10px;
+    flex: 1 1 250px;
   }
   &__name {
     font-weight: 600;
@@ -252,10 +258,11 @@ body {
     padding: 15px;
     margin: 0 15px;
     align-items: start;
+    @media (max-width: 504px) {
+      padding: 0;
+    }
   }
-  // @media (max-width: 876px) {
-  // width: 700px;
-  // }
+
   // @media (max-width: 767px) {
   // }
   &__column {
@@ -264,6 +271,7 @@ body {
 }
 .about-item {
   text-align: center;
+  padding: 10px;
   &__title {
     font-family: "Open Sans";
     font-size: 64px;
@@ -284,6 +292,10 @@ body {
     @media (max-width: 767px) {
       line-height: 50px;
       font-size: 40px;
+    }
+    @media (max-width: 375px) {
+      line-height: 40px;
+      font-size: 30px;
     }
   }
   &__description {
@@ -322,8 +334,32 @@ body {
     margin: 0 auto;
     border-radius: 5px;
   }
-  @media (max-width: 867px) {
-    font-size: 24px;
+  @media (max-width: 1400px) {
+    font-size: 45px;
+    &::after {
+      width: 60px;
+      height: 4px;
+      margin: -5px auto;
+    }
+  }
+  @media (max-width: 1200px) {
+    font-size: 40px;
+    &::after {
+      width: 45px;
+      height: 3px;
+      margin: -10px auto;
+    }
+  }
+  @media (max-width: 1000px) {
+    font-size: 35px;
+    &::after {
+      width: 35px;
+      height: 3px;
+      margin: -13px auto;
+    }
+  }
+  @media (max-width: 767px) {
+    font-size: 25px;
     &::after {
       width: 30px;
       height: 2px;
@@ -336,39 +372,103 @@ body {
   width: 100%;
   &__title {
     margin: 0 0 55px 0;
+    @media (max-width: 1200px) {
+      margin: 0 0 45px 0;
+    }
+    @media (max-width: 1000px) {
+      margin: 0 0 35px 0;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 25px 0;
+    }
   }
   &__row {
     // width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    @media (max-width: 479px) {
+      display: block;
+    }
   }
 }
 .experience-item {
   font-family: "Open Sans";
   background-color: var(--bg-color);
-  flex: 1 1 40%;
+  flex: 1 0 200px;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
   justify-content: space-between;
+  @media (max-width: 879px) {
+    margin: 15px;
+  }
+  @media (max-width: 767px) {
+    margin: 10px;
+  }
+  // @media (max-width: 479px) {
+  //   margin: 10px;
+  // }
 
   &__title {
     font-size: 24px;
     line-height: 33px;
     font-weight: 600;
+    @media (max-width: 1400px) {
+      font-size: 21px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 19px;
+    }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 
   &__subtitle {
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 19px;
+    line-height: 30px;
     font-weight: 400;
     margin: 0 0 10px 0;
+    @media (max-width: 1400px) {
+      font-size: 18px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 17px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 16px;
+    }
+    @media (max-width: 767px) {
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0 0 3px 0;
+    }
   }
   &__description {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 27px;
+    @media (max-width: 1400px) {
+      font-size: 17px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @media (max-width: 479px) {
+      display: none;
+    }
   }
 }
 .skill {
@@ -378,9 +478,21 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    @media (max-width: 479px) {
+      display: block;
+    }
   }
   &__title {
     margin: 0 0 55px 0;
+    @media (max-width: 1200px) {
+      margin: 0 0 45px 0;
+    }
+    @media (max-width: 1000px) {
+      margin: 0 0 35px 0;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 25px 0;
+    }
   }
 }
 .skill-item {
@@ -391,10 +503,19 @@ body {
   border-radius: 10px;
   margin: 20px;
   justify-content: space-between;
+  @media (max-width: 879px) {
+    margin: 15px;
+  }
+  @media (max-width: 767px) {
+    margin: 10px;
+  }
 
   &__image {
     width: 75px;
     height: 75px;
+    @media (max-width: 479px) {
+      display: none;
+    }
   }
   &__image img {
     border-radius: 10px;
@@ -405,11 +526,37 @@ body {
     font-size: 24px;
     line-height: 33px;
     font-weight: 600;
+    @media (max-width: 1400px) {
+      font-size: 21px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 19px;
+    }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
   &__description {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 27px;
+    @media (max-width: 1400px) {
+      font-size: 17px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }
 .portfolio {
@@ -417,11 +564,23 @@ body {
   width: 100%;
   &__title {
     margin: 0 0 55px 0;
+    @media (max-width: 1200px) {
+      margin: 0 0 45px 0;
+    }
+    @media (max-width: 1000px) {
+      margin: 0 0 35px 0;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 25px 0;
+    }
   }
   &__row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    @media (max-width: 479px) {
+      display: block;
+    }
   }
 }
 .portfolio-item {
@@ -432,33 +591,88 @@ body {
   border-radius: 10px;
   margin: 20px;
   justify-content: space-between;
+  @media (max-width: 879px) {
+    margin: 15px;
+  }
+  @media (max-width: 767px) {
+    margin: 10px;
+  }
   &__title {
     font-size: 24px;
     line-height: 33px;
     font-weight: 600;
+    @media (max-width: 1400px) {
+      font-size: 21px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 19px;
+    }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 
   &__description {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 27px;
+    @media (max-width: 1400px) {
+      font-size: 17px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
   &__stek {
     display: flex;
   }
   &__stek-item {
     text-transform: uppercase;
+    font-size: 15px;
     padding: 7px;
     border-radius: 10px;
     border: 1px solid #ffffff;
     margin: 5px 5px 0 0;
+    @media (max-width: 1400px) {
+      font-size: 14px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 13px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 12px;
+    }
+    @media (max-width: 479px) {
+      display: none;
+    }
   }
 }
 .contact {
   height: 100vh;
   width: 100%;
+  position: relative;
   &__title {
-    margin: 0 0 10vh 0;
+    margin: 0 0 150px 0;
+    @media (max-width: 1200px) {
+      margin: 0 0 85px 0;
+    }
+    @media (max-width: 1000px) {
+      margin: 0 0 55px 0;
+    }
+    @media (max-width: 767px) {
+      margin: 0 0 35px 0;
+    }
   }
 
   &__text {
@@ -469,34 +683,85 @@ body {
     font-size: 20px;
     font-weight: 400;
     line-height: 27px;
-    @media (max-width: 867px) {
+    @media (max-width: 1400px) {
+      font-size: 17px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 16px;
+    }
+    @media (max-width: 1000px) {
+      font-size: 15px;
+    }
+    @media (max-width: 767px) {
       font-size: 14px;
+      line-height: 20px;
+    }
+    @media (max-width: 600px) {
+      max-width: 400px;
+    }
+    @media (max-width: 466px) {
+      max-width: 350px;
+    }
+    @media (max-width: 400px) {
+      max-width: 300px;
     }
   }
   &__button {
-    max-width: 150px;
+    max-width: 160px;
     margin: 55px auto;
     text-align: center;
     background-color: var(--red-color);
     border-radius: 5px;
     padding: 8px 14px;
     a {
+      font-family: "Open Sans";
       line-height: 27.2px;
       font-size: 16px;
       font-weight: 400;
       padding: 10px;
       color: var(--text-color);
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
+      @media (max-width: 600px) {
+        max-width: 400px;
+      }
+      @media (max-width: 466px) {
+        max-width: 350px;
+      }
+      @media (max-width: 400px) {
+        max-width: 300px;
+      }
     }
   }
   &__links {
     display: flex;
-    margin: 10% auto 0 auto;
     max-width: 100px;
+    margin: 0 0 0 -50px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
   }
   &__link {
     max-width: 40px;
     max-height: 40px;
+    @media (max-width: 767px) {
+      max-width: 35px;
+      max-height: 35px;
+    }
+    @media (max-width: 600px) {
+      max-width: 30px;
+      max-height: 30px;
+    }
+    @media (max-width: 466px) {
+      max-width: 30px;
+      max-height: 30px;
+    }
+    //   @media (max-width: 400px) {
+    //     max-width: 300px;
+    //   }
   }
+
   &__link a img {
     max-width: 100%;
     max-height: 100%;
@@ -505,7 +770,7 @@ body {
 .footer {
   height: 50px;
   background-color: var(--bg-color);
-  font-family: Open Sans;
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 400;
   line-height: 27.2px;
