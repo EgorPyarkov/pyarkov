@@ -531,6 +531,7 @@ body {
 @media (max-width: 879px) {
   .experience-item {
     margin: 15px;
+    padding: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -675,7 +676,6 @@ body {
 @media (max-width: 767px) {
   .skill-item {
     margin: 10px;
-    padding: 10px;
   }
 }
 .skill-item__image {
@@ -795,7 +795,6 @@ body {
 }
 @media (max-width: 767px) {
   .portfolio-item {
-    padding: 10px;
     margin: 10px;
   }
 }
@@ -992,7 +991,7 @@ body {
   max-width: 100px;
   margin: 0 0 0 -50px;
   position: absolute;
-  bottom: 55px;
+  bottom: 25px;
   left: 50%;
 }
 .contact__link {
