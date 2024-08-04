@@ -38,13 +38,14 @@ body {
 
 #menuToggle a {
   text-decoration: none;
-  color: #232323;
+  color: #cccccc;
 
   transition: color 0.3s ease;
 }
 
 #menuToggle a:hover {
   color: tomato;
+  transition: 0.5s;
 }
 
 #menuToggle input {
@@ -141,8 +142,8 @@ body {
 
 #menu li {
   padding: 10px 0;
+  font-family: "Open Sans";
   font-size: 22px;
-  color: #cccccc;
 }
 
 /*
@@ -886,6 +887,11 @@ body {
   &__link {
     max-width: 40px;
     max-height: 40px;
+    transform: scale(1);
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.1);
+    }
     @media (max-width: 767px) {
       max-width: 35px;
       max-height: 35px;
