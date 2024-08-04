@@ -18,9 +18,9 @@ body {
   background-color: var(--bg-color);
 }
 .navigation {
-  visibility: hidden;
+  display: none;
   @media (max-width: 529px) {
-    visibility: visible;
+    display: block;
   }
 }
 
@@ -124,7 +124,7 @@ body {
 #menu {
   position: absolute;
   width: 300px;
-  height: 100vh;
+  height: 110vh;
   margin: -100px 0 0 -200px;
   padding: 50px;
   padding-top: 125px;
